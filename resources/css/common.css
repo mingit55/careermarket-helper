@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: "typo";
-    src: url("/resources/fonts/typo.ttf");
+    font-family: "JUA";
+    src: url("/resources/fonts/JUA.ttf");
 }
 
 /* Common */
@@ -21,6 +21,11 @@ body { width: 100%; height: 100vh; overflow-x: hidden; overflow-y: auto; }
 a, button, label  { cursor: pointer; user-select: none; }
 a, a:hover { text-decoration: none; color: inherit; }
 
+#wrap {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
 .bg-none { background: none!important; }
 .font-weight-bolder { font-weight: 900!important; }
 
@@ -34,29 +39,27 @@ a, a:hover { text-decoration: none; color: inherit; }
     padding-left: 20px; padding-right: 20px; 
     margin: 0 auto;
 }
+.icon {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 5px solid #000;
+}
 
 .text-main      { color: #ff9a76!important; }
 .text-sub       { color: #679b9b!important; }
 .text-muted     { color: #f7c5a8!important; }
 .text-lighter   { color: #ffeadb!important; }
+.text-gray      { color: #888!important; }
 
 /* /Common */
 
 /* Title */
-.typo { font-family: "typo", sans-serif; }
-
-.title { letter-spacing: -0.15em; }
-.subtitle { transition: 0.8s;  font-family: "typo", sans-serif; color: #fff; }
-
-
-.title__do, .title__woo, .title__mi {
-    transition: 0.8s;
-    font-family: "typo", sans-serif;
-    color: #fff;
+.jua { font-family: "JUA", sans-serif; }
+.title {
+    font-size: 2.5em;  font-family: "JUA", sans-serif; 
+    color: var(--sub);
 }
-.title__woo { transition-delay: 0.15s; }
-.title__mi  { transition-delay: 0.3s; }
-
 /* /Title */
 
 /* FontSize */
@@ -138,6 +141,7 @@ header {
     width: 100%;
     height: 80px;
     z-index: 1000;
+    border-bottom: 1px solid #ddd;
 }
 
 header .logo {
@@ -212,7 +216,6 @@ header .nav-item .sub-list a:hover { background-color: #eee; }
 
 
 .nav__open {
-    margin-right: 1em;
     width: 2em; height: 2em;
     position: relative;
     cursor: pointer;
@@ -224,7 +227,7 @@ header .nav-item .sub-list a:hover { background-color: #eee; }
     margin-top: 1em;
     width: 1.8em;
     height: 2px;
-    background-color: #fff;
+    background-color: #555;
     border-radius: 1em;
 }
 .nav__open > span:nth-child(1) { transform: translateY(-0.7em); }
@@ -344,7 +347,14 @@ header .nav-item .sub-list a:hover { background-color: #eee; }
 
 
 /* 푸터 영역 */
-footer { background-color: #333; color: #aaa; font-size: 0.9em; }
+footer { 
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 50px;
+    overflow: hidden;
+    background-color: #333; 
+    color: #aaa; font-size: 0.9em; 
+}
 footer .social a:hover { color: #fff; }
 
 /* /푸터 영역 */

@@ -3,11 +3,14 @@ header {
     left: 0; top: 0;
     width: 100%;
     background: none;
+    border-bottom: none;
 }
 
 header .logo { background-image: url(../images/Wlogo.svg); }
 header .nav-item a { color: #fff; }
 header .nav-item::after { background-color: #fff; }
+
+.nav__open > span { background-color: #fff; }
 
 /* 비주얼 영역 */
 .visual {
@@ -146,7 +149,7 @@ header .nav-item::after { background-color: #fff; }
 
     .main__title { font-size: 2em; }
     .main__description { white-space: initial; margin-top: 2em; }
-    .main__litem { flex: 0 0 50%; }
+    .main__litem { flex: 0 0 50%; margin-bottom: 1em; }
 }
 /* md */
 

@@ -8,7 +8,7 @@ class CommonController {
     }
 
     // 회원가입 페이지
-    function signUp(){  
-        view("sign-up");
+    function signupInitPage(){  
+        view("signup__init");
     }
 }

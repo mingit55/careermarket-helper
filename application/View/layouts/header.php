@@ -37,7 +37,7 @@
         </nav>
         <nav class="auth--mobile">
             <a href="#" class="openable__login closable__nav">로그인</a>
-            <a href="/">회원가입</a>
+            <a href="/sign-up/init">회원가입</a>
         </nav>
     </div>
     <!-- /Modal__Navigation -->
@@ -81,7 +81,7 @@
                             <a href="#" class="openable__login">로그인</a>
                         </div>
                         <div class="nav-item">
-                            <a href="#">회원가입</a>
+                            <a href="/sign-up/init">회원가입</a>
                         </div>
                     </div>
                     <div class="nav__open openable__nav d-lg-none">

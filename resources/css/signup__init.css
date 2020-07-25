@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.type__item {
+    --color: var(--main);
+    margin: 1em 2em;
+    background-color: #ffffff;
+    display: flex;
+    padding: 0.75em;
+    cursor: pointer;
+    user-select: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+.type__item:hover {
+    --color: var(--sub);
+}
+
+.type__icon {
+    width: 5em;
+    height: 5em;
+    border:  0.1em solid var(--color);
+    color: var(--color);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5em;
+    transition: 0.3s;
+}
+
+.type__item strong {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color);
+    transition: 0.3s;
+}
