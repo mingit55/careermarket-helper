@@ -1,4 +1,5 @@
 <!-- 푸터 영역 -->
+<?php if($noLayout == false):?>
 <footer>
     <div class="container py-3">
         <div class="d-between">
@@ -11,6 +12,7 @@
         </div>
     </div>
 </footer>
+<?php endif;?>
 <!-- /푸터 영역 -->
 </div>
     <!-- Scripts -->

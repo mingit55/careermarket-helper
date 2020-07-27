@@ -47,17 +47,18 @@
         <form class="login__form" autocomplete="off">
             <div class="login__title mb-5">Welcome to 2020 CAREER MARKET</div>
             <div class="login__input">
-                <input type="email" name="identity" placeholder="E-mail" autocomplete="new-password">
+                <input type="email" name="identity" placeholder="이메일" autocomplete="new-password">
             </div>
             <div class="login__input">
-                <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+                <input type="password" name="password" placeholder="비밀번호" autocomplete="new-password">
             </div>
-            <button class="login__button">Log In</button>
+            <button class="login__button fx-n3">로그인</button>
         </form>
     </div>
     <!-- /Modal__Login -->
 
     <div id="wrap">
+        <?php if($noLayout == false):?>
          <!-- 헤더 영역 -->
         <header>
             <div class="extended-container d-flex align-items-center justify-content-between h-100">
@@ -92,4 +93,5 @@
                 </div>
             </div>
         </header>
+        <?php endif;?>
         <!-- /헤더 영역 -->

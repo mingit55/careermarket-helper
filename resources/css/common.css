@@ -39,6 +39,11 @@ a, a:hover { text-decoration: none; color: inherit; }
     padding-left: 20px; padding-right: 20px; 
     margin: 0 auto;
 }
+.reduced-container {
+    width: 100%; max-width: 780px;
+    padding-left: 20px; padding-right: 20px; 
+    margin: 0 auto;
+}
 .icon {
     width: 1em;
     height: 1em;
@@ -54,11 +59,66 @@ a, a:hover { text-decoration: none; color: inherit; }
 
 /* /Common */
 
+/* form */
+
+.form__container {
+    border-top: 3px solid var(--sub);
+    padding-top: 1em;
+}
+
+.form__group { margin-bottom: 1em; }
+
+.form__control {
+    width: 100%;
+    height: 2.5em;
+    padding: 0 1em;
+    border: 1px solid #ddd;
+    outline: none;
+    color: #333;
+}
+.form__control::placeholder { color: #555; }
+textarea.form__control {
+    height: 5em;
+    resize: none;
+    padding: 0.5em 1em;
+}
+textarea.form__control::placeholder {
+    font-size: 1em;
+}
+
+.form__button {
+    background-color: var(--sub);
+    color: #fff;
+    width: 100%;
+    height: 3em;
+    border: none;    
+}
+
+.file__group {
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1em;
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.file__input { display: none;  }
+.file__label {
+    color: #555;
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    padding-left: 1em;
+}
+
+/* /form */
+
 /* Title */
 .jua { font-family: "JUA", sans-serif; }
 .title {
-    font-size: 2.5em;  font-family: "JUA", sans-serif; 
-    color: var(--sub);
+    font-size: 1.8em;
+    font-weight: 900;
 }
 /* /Title */
 

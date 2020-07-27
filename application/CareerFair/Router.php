@@ -5,6 +5,7 @@ use Controller\CompanyController;
 use Controller\StudentController;
 
 class Router {
+    static $pages__emptyLayout = [];
     static $pages = [];
     static function __callStatic($name, $args){
         if(strtolower($_SERVER['REQUEST_METHOD']) === $name){
