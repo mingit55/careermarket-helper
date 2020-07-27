@@ -81,7 +81,7 @@ header .nav-item::after { background-color: #fff; }
 
 .main__area--reverse {
     background-color: #f7f7f7;
-    color: var(--main);
+    color: #555;
 }
 
 .main__title {
