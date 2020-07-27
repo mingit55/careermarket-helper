@@ -1,4 +1,7 @@
 <?php
+
+use CareerFair\Router;
+
 function user(){
     return isset($_SESSION['user']) ? $_SESSION['user'] : false;
 }
@@ -43,7 +46,7 @@ function json_response($JSON = []){
 
 }
 
-function view($viewName, $data = []){
+function view($viewName, $data = [], $noLayout = false){
     extract($data);
 
     $viewName = str_replace("/", DS, $viewName);
@@ -51,7 +54,9 @@ function view($viewName, $data = []){
 
     if(is_file($viewPath)){
         require VIEW.DS."layouts".DS."header.php";
+
         require $viewPath;
+
         require VIEW.DS."layouts".DS."footer.php";
     }
     exit;

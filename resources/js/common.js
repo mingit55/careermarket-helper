@@ -5,6 +5,12 @@ NodeList.prototype.addEventListener = function(event, callback){
 };
 
 window.addEventListener("load", function(){
+    // 링크 이동
+    let hasLink = document.querySelectorAll("[data-link]");
+    hasLink.addEventListener("click", function(){
+        location.assign(this.dataset.link);
+    });
+
     // 네비게이션 모달
     let openNav = document.querySelector("#open-nav");
     let openableNav = document.querySelectorAll(".openable__nav"); 
