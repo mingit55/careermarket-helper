@@ -36,18 +36,23 @@
             <a href="/">진로마켓</a>
         </nav>
         <nav class="auth--mobile">
-            <a href="#" class="openable__login closable__nav">로그인</a>
-            <a href="/sign-up/init">회원가입</a>
+            <?php if(user()):?>
+                <a href="#"><b class="mr-1"><?=user()->name?></b>님</a>
+                <a href="/logout">로그아웃</a>
+            <?php else:?>
+                <a href="#" class="openable__login closable__nav">로그인</a>
+                <a href="/sign-up/init">회원가입</a>
+            <?php endif;?>
         </nav>
     </div>
     <!-- /Modal__Navigation -->
 
     <!-- Modal__Login -->
     <div class="modal__login modal__content closable__login">
-        <form class="login__form" autocomplete="off">
+        <form action="/sign-in" method="post" class="login__form" autocomplete="off">
             <div class="login__title mb-5">Welcome to 2020 CAREER MARKET</div>
             <div class="login__input">
-                <input type="email" name="identity" placeholder="이메일" autocomplete="new-password">
+                <input type="email" name="email" placeholder="이메일" autocomplete="new-password">
             </div>
             <div class="login__input">
                 <input type="password" name="password" placeholder="비밀번호" autocomplete="new-password">
@@ -78,12 +83,21 @@
                 </div>
                 <div class="align-center">
                     <div class="nav d-none d-lg-flex">
-                        <div class="nav-item">
-                            <a href="#" class="openable__login">로그인</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="/sign-up/init">회원가입</a>
-                        </div>
+                        <?php if(user()):?>
+                            <div class="nav-item">
+                                <a href="#"><b class="mr-1"><?=user()->name?></b>님</a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/logout">로그아웃</a>
+                            </div>
+                        <?php else:?>
+                            <div class="nav-item">
+                                <a href="#" class="openable__login">로그인</a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/sign-up/init">회원가입</a>
+                            </div>
+                        <?php endif;?>
                     </div>
                     <div class="nav__open openable__nav d-lg-none">
                         <span></span>

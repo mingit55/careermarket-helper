@@ -2,19 +2,19 @@
     <div class="mb-5 text-center">
         <h1 class="fx-6 font-weight-bold">기업 회원가입</h1>
     </div>    
-    <form method="post" class="form__container" autocomplete="false">
+    <form method="post" class="form__container" autocomplete="false" enctype="multipart/form-data">
         <div class="form__group">
             <small class="text-gray ml-1 mb-2 d-inline-block">※ 이메일은 비밀번호 찾기 등에 사용될 수 있습니다.</small>
-            <input type="text" name="email" placeholder="이메일" class="form__control" required>
+            <input type="email" name="email" placeholder="이메일" class="form__control" required>
         </div>
         <div class="form__group">
-            <input type="password" name="password" placeholder="비밀번호 (영문+숫자 8-30자)" class="form__control" required>
+            <input type="password" name="password" placeholder="비밀번호 (영문/숫자 조합 8-30자)" class="form__control" required>
         </div>
         <div class="form__group">
             <input type="password" name="passconf" placeholder="비밀번호 확인" class="form__control" required>
         </div>
         <div class="form__group">
-            <input type="text" name="name" placeholder="기업명 (2-16자)" class="form__control" required>
+            <input type="text" name="name" placeholder="기업명" class="form__control" required>
         </div>
         <div class="file__group">
             <input type="file" id="input__logo" name="logo" class="file__input" required>
@@ -46,7 +46,7 @@
             </select>
         </div>
         <div class="form__group">
-            <textarea name="description" class="form__control" placeholder="기업 소개"></textarea>
+            <textarea name="description" class="form__control" placeholder="기업 소개" required></textarea>
         </div>
         <div class="form__group">
             <button class="form__button" type="submit">회원가입</button>

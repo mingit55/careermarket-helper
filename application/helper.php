@@ -1,7 +1,5 @@
 <?php
 
-use CareerFair\Router;
-
 function user(){
     return isset($_SESSION['user']) ? $_SESSION['user'] : false;
 }
@@ -91,4 +89,8 @@ function base64_upload($base64){
     file_put_contents(UPLOAD.DS.$filename, $imageData);
 
     return "/resources/uploads/".$filename;
+}
+
+function extname($filename){
+    return strtolower(substr($filename, strrpos($filename, ".")));
 }
