@@ -21,7 +21,7 @@
             <label for="input__logo" class="file__label">로고 이미지 (jpg, png, gif)</label>
         </div>
         <div class="form__group">
-            <select name="group" class="form__control" required>
+            <select name="field" class="form__control" required>
                 <option value="">업종 분류</option>
                 <option value="농업, 임업 및 어업">농업, 임업 및 어업</option>
                 <option value="광 업">광 업</option>
