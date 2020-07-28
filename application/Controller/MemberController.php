@@ -46,7 +46,9 @@ class MemberController {
         if(!preg_match("/^[가-힣]{2,16}$/u", $name)) back("올바른 이름을 입력해 주세요.");
 
         $hashed_password = hash("sha256", $password);
-        DB::query("INSERT INTO students(email, password, name) VALUES (?, ?, ?)", [$email, $hashed_password, $name]);
+        DB::query("INSERT INTO students(email, password, name, school_field, school_grade, school_class, school_number) VALUES (?, ?, ?, ?, ?, ?, ?)", [
+            $email, $hashed_password, $name, $school_field, $school_grade, $school_class, $school_number
+            ]);
 
         go("/", "회원가입이 완료되었습니다.");
     }

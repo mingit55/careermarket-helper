@@ -22,13 +22,13 @@
         </div>
         <div class="form__group">
             <select name="field" class="form__control" required>
-                <option value="">업종 분류</option>
+                <option value="">업종 선택</option>
                 <option value="농업, 임업 및 어업">농업, 임업 및 어업</option>
-                <option value="광 업">광 업</option>
-                <option value="제 조 업">제 조 업</option>
+                <option value="광업">광업</option>
+                <option value="제조업">제조업</option>
                 <option value="전기, 가스, 증기 및 공기 조절 공급업">전기, 가스, 증기 및 공기 조절 공급업</option>
                 <option value="수도, 하수 및 폐기물 처리, 원료 재생업">수도, 하수 및 폐기물 처리, 원료 재생업</option>
-                <option value="건 설 업">건 설 업</option>
+                <option value="건설업">건설업</option>
                 <option value="도매 및 소매업">도매 및 소매업</option>
                 <option value="운수 및 창고업">운수 및 창고업</option>
                 <option value="숙박 및 음식점업">숙박 및 음식점업</option>
