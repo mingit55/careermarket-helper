@@ -14,5 +14,17 @@ Router::get("/sign-up/company", "MemberController@companyPage");
 Router::post("/sign-up/student", "MemberController@signUpStudent");
 Router::post("/sign-up/company", "MemberController@signUpCompany");
 
+// 참여 기업
+Router::get("/participant-companies", "CommonController@companyPage");
+Router::get("/companies", "CommonController@getCompaniesJSON");
+
+// 신청 현황
+if(user() && user()->type == "student"){
+    Router::get("/application", "");
+} else {
+    Router::get("/application", "");
+}
+Router::post("/application");
+
 
 Router::connect();

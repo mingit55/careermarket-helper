@@ -22,7 +22,8 @@
 </head>
 <body>
     <!-- Hidden Inputs -->
-    <input type="hidden" value="<?=user() ? user()->email : ""?>">
+    <input type="hidden" id="user__email" value="<?=user() ? user()->email : ""?>">
+    <input type="hidden" id="user__type" value="<?=user() ? user()->type : "guest"?>">
     <input type="checkbox" class="open-modal" id="open-nav" hidden>
     <input type="checkbox" class="open-modal" id="open-login" hidden>
     <!-- /Hidden Inputs -->
@@ -31,7 +32,7 @@
     <div class="modal__nav modal__content closable__nav d-lg-none">
         <nav class="nav--mobile">
             <a href="/">HOME</a>
-            <a href="/">참여 기업</a>
+            <a href="/participant-companies">참여 기업</a>
             <a href="/">신청 현황</a>
         </nav>
         <nav class="auth--mobile">
@@ -70,7 +71,7 @@
                     <a href="/" class="logo d-none d-lg-block"></a>
                     <div class="nav ml-5 d-none d-lg-flex">
                         <div class="nav-item">
-                            <a href="/companies">참여기업</a>
+                            <a href="/participant-companies">참여기업</a>
                         </div>
                         <div class="nav-item">
                             <a href="/requests">신청현황</a>
