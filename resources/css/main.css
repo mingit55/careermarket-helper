@@ -61,7 +61,7 @@ header .nav-item::after { background-color: #fff; }
 
 .visual .visual__texts p {
     color: #eee;
-    text-shadow: 0 3px 5px #0008;
+    text-shadow: 0 2px 5px #0008;
     font-weight:  bold;
     line-height: 2em;
     white-space: pre-line;

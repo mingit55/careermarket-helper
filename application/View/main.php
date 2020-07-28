@@ -55,7 +55,7 @@
                         </div>
                         <div class="main__pitem">
                             <strong>참가기업 중 원하는 기업 찾기</strong>
-                            <p>한국표준산업분류에 따라 정리된 기업 목록으로
+                            <p>업종 분류에 따라 정리된 기업 목록으로
                                 마음에 드는 기업을 찾을 수 있습니다.</p>
                         </div>
                         <div class="main__pitem">

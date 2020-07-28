@@ -33,7 +33,6 @@
             <a href="/">HOME</a>
             <a href="/">참여 기업</a>
             <a href="/">신청 현황</a>
-            <a href="/">진로마켓</a>
         </nav>
         <nav class="auth--mobile">
             <?php if(user()):?>
@@ -71,13 +70,10 @@
                     <a href="/" class="logo d-none d-lg-block"></a>
                     <div class="nav ml-5 d-none d-lg-flex">
                         <div class="nav-item">
-                            <a href="/recruits/register">참여기업</a>
+                            <a href="/companies">참여기업</a>
                         </div>
                         <div class="nav-item">
-                            <a href="/resumes">신청현황</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="/">진로마켓</a>
+                            <a href="/requests">신청현황</a>
                         </div>
                     </div>
                 </div>
