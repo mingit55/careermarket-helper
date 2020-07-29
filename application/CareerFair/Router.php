@@ -35,12 +35,12 @@ class Router {
 
         if($con instanceof StudentController){
             if(!user()) go("/", "로그인 후 사용 가능합니다.");   
-            else if(user()->type !== "normal") go("/", "일반 회원만 사용 가능합니다.");
+            else if(user()->type !== "students") go("/", "일반 회원만 사용 가능합니다.");
         }
 
         if($con instanceof CompanyController){
             if(!user()) go("/", "로그인 후 사용 가능합니다.");
-            else if(user()->type !== "company") go("/", "기업 회원만 사용 가능합니다.");
+            else if(user()->type !== "companies") go("/", "기업 회원만 사용 가능합니다.");
         }
         
         $con->{$action[1]}(...$args);

@@ -38,7 +38,15 @@ class Company {
                                             <span>지원<br>인원</span>
                                             <strong>0</strong>
                                         </div>
-                                        ${ (user__type === 'students' ? `<button class="company__btn" data-id="${id}">면접신청</button>`: "")}
+                                        ${ 
+                                            user__type === 'students' ? 
+                                                (
+                                                    this.app.appliedList.includes(id) ? 
+                                                    `<button class="company__btn" data-id="${id}" disabled>신청 중</button>`
+                                                    :`<button class="company__btn" data-id="${id}">면접신청</button>`
+                                                )
+                                            : ""
+                                        }
                                     </div>
                                 </div>`;
         return elem;
@@ -48,17 +56,34 @@ class Company {
 class App {
     constructor(){
         // 초기 설정
+        this.applyForm = document.querySelector("#apply-form");
         this.searchCount = document.querySelector("#search__count");
         this.row = document.querySelector("#company__row");
         this.search__name = "";
         this.search__field = "";
         this.search__category = "";
         
-        // 화면 업데이트
-        this.update();
 
-        // 이벤트 작성
-        this.setEvents();
+        this.getUserData().then(() => {
+            // 화면 업데이트
+            this.update();
+    
+            // 이벤트 작성
+            this.setEvents();
+        });
+    }
+
+    // 유저 정보 가져오기
+    getUserData(){
+        return fetch(`/students/${user__identity}/application`)
+            .then(res => res.json())
+            .then(json => {
+                this.appliedList = json.data.map(item => item.company_id);
+            })
+            .catch(err => {
+                alert("신청 목록을 가져올 수 없었습니다.");
+                this.appliedList = [];
+            });
     }
 
     // 이벤트 작성
@@ -87,16 +112,8 @@ class App {
                 let company = this.companies.find(company => company.id == id);
                 if(!confirm(company.name + "에 면접을 신청합니다. 진행하시겠습니까?")) return;
 
-                fetch("/application", new Request({company_id: company.id}, {method : "POST"}))
-                .then(res => res.json())
-                .then(res => {
-                    if(res.message) {
-                        alert(res.message);
-                    } else {
-                        alert("면접을 신청했습니다.");
-                        location.reload();
-                    }
-                });
+                this.applyForm.querySelector("#company_id").value = company.id;
+                this.applyForm.submit();
             }
         });
     }

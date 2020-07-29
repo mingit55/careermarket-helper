@@ -1,3 +1,6 @@
+<form id="apply-form" action="/applications" method="post">
+    <input type="hidden" id="company_id" name="company_id">
+</form>
 <div class="container py-5">
     <div class="text-center mb-4">
         <div class="title">참여 기업 찾아보기</div>

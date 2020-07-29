@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- Hidden Inputs -->
-    <input type="hidden" id="user__email" value="<?=user() ? user()->email : ""?>">
+    <input type="hidden" id="user__identity" value="<?=user() ? user()->id : ""?>">
     <input type="hidden" id="user__type" value="<?=user() ? user()->type : "guest"?>">
     <input type="checkbox" class="open-modal" id="open-nav" hidden>
     <input type="checkbox" class="open-modal" id="open-login" hidden>

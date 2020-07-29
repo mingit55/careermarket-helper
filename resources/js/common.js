@@ -126,7 +126,7 @@ NodeList.prototype.addEventListener = function(event, callback){
 };
 
 window.addEventListener("load", function(){
-    window.user__email = document.querySelector("#user__email").value;
+    window.user__identity = document.querySelector("#user__identity").value;
     window.user__type = document.querySelector("#user__type").value;
 
     // 링크 이동

@@ -20,11 +20,12 @@ Router::get("/companies", "CommonController@getCompaniesJSON");
 
 // 신청 현황
 if(user() && user()->type == "student"){
-    Router::get("/application", "");
+    Router::get("/applications", "");
 } else {
-    Router::get("/application", "");
+    Router::get("/applications", "");
 }
-Router::post("/application");
+Router::get("/students/{student_id}/application", "StudentController@getApplicationJSON");
+Router::post("/applications", "StudentController@applyInterview");
 
 
 Router::connect();
