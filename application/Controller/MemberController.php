@@ -28,10 +28,10 @@ class MemberController {
         view("signup__init", [], true);
     }
     function studentPage(){
-        view("signup__student", [], true);
+        view("signup--student", [], true);
     }
     function companyPage(){
-        view("signup__company", [], true);
+        view("signup--company", [], true);
     }
 
     // 회원가입 프로세스

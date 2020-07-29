@@ -33,7 +33,7 @@
         <nav class="nav--mobile">
             <a href="/">HOME</a>
             <a href="/participant-companies">참여 기업</a>
-            <a href="/">신청 현황</a>
+            <a href="/applications">신청 현황</a>
         </nav>
         <nav class="auth--mobile">
             <?php if(user()):?>
@@ -74,7 +74,7 @@
                             <a href="/participant-companies">참여기업</a>
                         </div>
                         <div class="nav-item">
-                            <a href="/requests">신청현황</a>
+                            <a href="/applications">신청현황</a>
                         </div>
                     </div>
                 </div>

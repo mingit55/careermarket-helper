@@ -14,7 +14,11 @@ class CommonController {
         view("company");
     }
     function getCompaniesJSON(){
-        $companies = DB::fetchAll("SELECT * FROM companies");
+        $companies = DB::fetchAll("SELECT DISTINCT C.*, IFNULL(A.cnt, 0) applicant_cnt
+                                    FROM companies C
+                                    LEFT JOIN (SELECT COUNT(*) cnt, company_id FROM applications GROUP BY company_id) A 
+                                    ON A.company_id = C.id
+                                    ORDER BY C.id");
         return json_response(compact("companies"));
     }
 }

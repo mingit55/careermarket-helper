@@ -29,6 +29,7 @@ a, a:hover { text-decoration: none; color: inherit; }
 .bg-none { background: none!important; }
 .font-weight-bolder { font-weight: 900!important; }
 
+.d-center { display: flex; justify-content: center; align-items: center; }
 .d-between { display: flex; justify-content: space-between; align-items: center; }
 .fit-cover { object-fit: cover; width: 100%; height: 100%; }
 .position-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
@@ -60,6 +61,25 @@ a, a:hover { text-decoration: none; color: inherit; }
 .bg-gray { background-color: #f7f7f7!important; }
 
 /* /Common */
+
+/* Button */
+
+.btn-filled {
+    --color: var(--sub);
+    padding: 0.5em 0.8em;
+    border: 1px solid var(--color);
+    color: var(--color);
+    background-color: transparent;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+.btn-filled:hover {
+    background-color: var(--color);
+    color: #fff;
+}
+.btn-filled.red { --color: var(--danger); }
+
+/* /Button */
 
 /* form */
 
@@ -129,7 +149,7 @@ textarea.form__control::placeholder {
 /* Title */
 .jua { font-family: "JUA", sans-serif; }
 .title {
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 900;
 }
 /* /Title */
@@ -170,11 +190,18 @@ textarea.form__control::placeholder {
 
 
 /* 테이블 */
+.t__wrap { max-width: 1920px; width: 100%; overflow-x: auto; }
+.t__inner { min-width: 760px; }
+
 .t__head, .t__row { display: flex; align-items: center; text-align: center; }
 .t__head { height: 50px; border-bottom: 1px solid #ddd; font-size: 0.9em; color: #555; }
 .t__row { min-height: 100px; padding: 1em 0; font-size: 0.95em; }
 .t__row:not(:first-child) { border-top: 1px solid #ddd; }
 
+
+.cell-100 { width: 100%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
+.cell-70 { width: 70%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
+.cell-60 { width: 60%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
 .cell-50 { width: 50%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
 .cell-40 { width: 40%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }
 .cell-30 { width: 30%; padding: 0 0.5em; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; }

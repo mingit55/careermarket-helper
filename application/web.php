@@ -19,13 +19,16 @@ Router::get("/participant-companies", "CommonController@companyPage");
 Router::get("/companies", "CommonController@getCompaniesJSON");
 
 // 신청 현황
-if(user() && user()->type == "student"){
-    Router::get("/applications", "");
+if(user() && user()->type == "students"){
+    Router::get("/applications", "StudentController@applicationPage");
 } else {
-    Router::get("/applications", "");
+    Router::get("/applications", "CompanyController@applicationPage");
 }
-Router::get("/students/{student_id}/application", "StudentController@getApplicationJSON");
+
+// 신청 현황 API
+Router::get("/students/{student_id}/applications", "StudentController@getApplicationJSON");
 Router::post("/applications", "StudentController@applyInterview");
+Router::delete("/applications/{apply_id}", "StudentController@removeApplication");
 
 
 Router::connect();

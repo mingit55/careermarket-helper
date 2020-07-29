@@ -1,12 +1,13 @@
 class Company {
     constructor(app, json){
-        const {id, logo, field, category, name, description} = json;
+        const {id, logo, field, category, name, description, applicant_cnt} = json;
         this.id = id;
         this.logo = logo;
         this.field = field;
         this.category = category;
         this.name = name;
         this.description = description;
+        this.applicant_cnt = parseInt(applicant_cnt);
 
 
         this.app = app;   
@@ -15,7 +16,7 @@ class Company {
     }
 
     createElement(){
-        const {id, logo, field, category, name, description} = this;
+        const {id, logo, field, category, name, description, applicant_cnt} = this;
         
         let elem = document.createElement("div");
         elem.style.transition = "left 0.4s, top 0.4s";
@@ -36,7 +37,7 @@ class Company {
                                     <div class="mt-5 text-right d-between">
                                         <div class="company__count">
                                             <span>지원<br>인원</span>
-                                            <strong>0</strong>
+                                            <strong>${applicant_cnt.toLocaleString()}</strong>
                                         </div>
                                         ${ 
                                             user__type === 'students' ? 
@@ -75,13 +76,12 @@ class App {
 
     // 유저 정보 가져오기
     getUserData(){
-        return fetch(`/students/${user__identity}/application`)
+        return fetch(`/students/${user__identity}/applications`)
             .then(res => res.json())
             .then(json => {
                 this.appliedList = json.data.map(item => item.company_id);
             })
             .catch(err => {
-                alert("신청 목록을 가져올 수 없었습니다.");
                 this.appliedList = [];
             });
     }
