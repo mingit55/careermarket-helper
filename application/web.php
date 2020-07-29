@@ -31,4 +31,8 @@ Router::post("/applications", "StudentController@applyInterview");
 Router::delete("/applications/{apply_id}", "StudentController@removeApplication");
 
 
+// 이력서 & 자기소개서 관리
+Router::get("/applications/{apply_id}/resumes", "StudentController@resumePage");
+
+
 Router::connect();

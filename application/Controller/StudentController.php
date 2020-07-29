@@ -54,4 +54,9 @@ class StudentController {
         DB::query("DELETE FROM applications WHERE id = ?", [$apply_id]);
         json_response([]);
     }
+
+    // 이력서 & 자기소개서 관리 페이지
+    function resumePage(){
+        view("resume");
+    }
 }
