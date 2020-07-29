@@ -1,8 +1,0 @@
-@charset "UTF-8";
-
-
-
-@media(max-width: 992px) {
-    #layout > .row { height: auto; }
-    .layout__left { height: auto; }
-}

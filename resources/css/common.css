@@ -60,6 +60,13 @@ a, a:hover { text-decoration: none; color: inherit; }
 
 .bg-gray { background-color: #f7f7f7!important; }
 
+.wx-50 { width: 50px; }
+.wx-100 { width: 100px; }
+.wx-150 { width: 150px; }
+.wx-200 { width: 200px; }
+.wx-250 { width: 250px; }
+.wx-300 { width: 300px; }
+
 /* /Common */
 
 /* Button */

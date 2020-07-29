@@ -1,7 +1,7 @@
-<!-- 이력서 -->
 <div class="resume">
+    <!-- 이력서 -->
     <div class="resume__container">
-        <h1 class="resume__title">이력서</h1>
+        <h1 class="resume__title">이 력 서</h1>
         <!-- 인적 사항 -->
         <table class="resume__table" data-info="personal">
             <tbody>
@@ -9,7 +9,7 @@
                     <td class="resume__image" rowspan="4">
                         <input type="hidden" id="profile__url" name="imageURL">
                         <input type="file" id="profile" hidden>
-                        <small class="d-inline-block mb-2 text-muted">등록된 사진이 없습니다</small>
+                        <small class="d-inline-block mb-2 text-gray">등록된 사진이 없습니다</small>
                         <button>사진 등록</button>
                         <label for="profile"></label>
                     </td>
@@ -31,83 +31,74 @@
             </tbody>
         </table>
         <!-- /인적 사항 -->
-        <!-- 학력 사항 -->
-        <table class="resume__table" data-info="education">
+        <!-- 학력 -->
+        <table class="resume__table" data-info="school">
             <tbody>
                 <tr>
-                    <td rowspan="3" class="resume__label resume__autosize">학 력 사 항</td>
-                    <td class="resume__head">재학 기간</td>
-                    <td class="resume__head">구분(재학/졸업)</td>
-                    <td class="resume__head">학교명</td>
-                    <td class="resume__head">전공</td>
-                    <td class="resume__head">학점</td>
-                    <td class="resume__head">삭제</td>
+                    <td rowspan="3" class="resume__label resume__autosize">학 력</td>
+                    <td class="resume__head">기 간</td>
+                    <td class="resume__head">학 교 명</td>
+                    <td class="resume__head">전 공</td>
+                    <td class="resume__head">비 고</td>
+                    <td class="resume__head">+</td>
                 </tr>
                 <tr>
-                    <td class="resume__input"><input type="text"></td>
-                    <td class="resume__input">
-                        <select name="type" id="edu_Type">
-                            <option value="재학">재학</option>
-                            <option value="졸업">졸업</option>
-                        </select>
-                    </td>
+                    <td class="resume__input wx-200"><input type="text" class="wx-200"></td>
                     <td class="resume__input"><input type="text"></td>
                     <td class="resume__input"><input type="text"></td>
-                    <td class="resume__input"><input type="text"></td>
+                    <td class="resume__input wx-100"><input type="text" class="wx-100"></td>
                     <td class="resume__remove">
-                        <button class="btn-remove">삭제 <i class="fa fa-times"></i></button>
+                        <button class="btn-remove"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__add" colspan="6">
+                    <td class="resume__add" colspan="5">
                         <button class="btn-add">추가 <i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- /학력 사항 -->
-        <!-- 경력 사항 -->
-        <table class="resume__table" data-info="career">
+        <!-- /학력 -->
+        <!-- 교내 활동 -->
+        <table class="resume__table" data-info="act">
             <tbody>
                 <tr>
-                    <td rowspan="3" class="resume__label resume__autosize">경 력 사 항</td>
-                    <td class="resume__head">회사명</td>
-                    <td class="resume__head">재직기간</td>
-                    <td class="resume__head">직급</td>
-                    <td class="resume__head">삭제</td>
+                    <td rowspan="3" class="resume__label resume__autosize">교 내 활 동</td>
+                    <td class="resume__head">날 짜</td>
+                    <td class="resume__head">상 세 내 용</td>
+                    <td class="resume__head">+</td>
                 </tr>
                 <tr>
-                    <td class="resume__input"><input type="text"></td>
-                    <td class="resume__input"><input type="text"></td>
+                    <td class="resume__input wx-200"><input type="text" class="wx-200"></td>
                     <td class="resume__input"><input type="text"></td>
                     <td class="resume__remove">
-                        <button class="btn-remove">삭제 <i class="fa fa-times"></i></button>
+                        <button class="btn-remove"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__add" colspan="4">
+                    <td class="resume__add" colspan="3">
                         <button class="btn-add">추가 <i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- /경력 사항 -->
+        <!-- /교내 활동 -->
         <!-- 대외 활동 -->
-        <table class="resume__table" data-info="outside">
+        <table class="resume__table" data-info="license">
             <tbody>
                 <tr>
-                    <td rowspan="3" class="resume__label resume__autosize">대 외 활 동</td>
-                    <td class="resume__head">기간</td>
-                    <td class="resume__head">기관/장소</td>
-                    <td class="resume__head">내용</td>
-                    <td class="resume__head">삭제</td>
+                    <td rowspan="3" class="resume__label resume__autosize">자 격 사 항</td>
+                    <td class="resume__head">취 득 일</td>
+                    <td class="resume__head">자 격 명</td>
+                    <td class="resume__head">발 급 기 관</td>
+                    <td class="resume__head">+</td>
                 </tr>
                 <tr>
-                    <td class="resume__input"><input type="text"></td>
+                    <td class="resume__input wx-200"><input type="text" class="wx-200"></td>
                     <td class="resume__input"><input type="text"></td>
                     <td class="resume__input"><input type="text"></td>
                     <td class="resume__remove">
-                        <button class="btn-remove">삭제 <i class="fa fa-times"></i></button>
+                        <button class="btn-remove"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -118,39 +109,65 @@
             </tbody>
         </table>
         <!-- /대외 활동 -->
-        <!-- 자격증/어학 -->
-        <table class="resume__table" data-info="license">
+        <!-- 수상 내역 -->
+        <table class="resume__table" data-info="award">
             <tbody>
                 <tr>
-                    <td rowspan="3" class="resume__label resume__autosize">자 격 증</td>
-                    <td class="resume__head">취득일</td>
-                    <td class="resume__head">구분(자격증/어학)</td>
-                    <td class="resume__head">자격/어학명</td>
-                    <td class="resume__head">발행처</td>
-                    <td class="resume__head">삭제</td>
+                    <td rowspan="3" class="resume__label resume__autosize">수 상 내 역</td>
+                    <td class="resume__head">수 상 일</td>
+                    <td class="resume__head">수 상 명</td>
+                    <td class="resume__head">발 급 기 관</td>
+                    <td class="resume__head">+</td>
                 </tr>
                 <tr>
+                    <td class="resume__input wx-200"><input type="text" class="wx-200"></td>
                     <td class="resume__input"><input type="text"></td>
-                    <td class="resume__input"><input type="text"></td>
-                    <td class="resume__input">
-                        <select name="type" id="lic_type">
-                            <option value="자격증">자격증</option>
-                            <option value="어학">어학</option>
-                        </select>
-                    </td>
                     <td class="resume__input"><input type="text"></td>
                     <td class="resume__remove">
-                        <button class="btn-remove">삭제 <i class="fa fa-times"></i></button>
+                        <button class="btn-remove"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__add" colspan="5">
+                    <td class="resume__add" colspan="4">
                         <button class="btn-add">추가 <i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- /자격증/어학 -->
+        <!-- /수상 내역 -->
     </div>
+    <!-- /이력서 -->
+    <!-- 자기소개서 -->
+    <div class="resume__container mt-5">
+        <div class="resume__title">자기소개서</div>
+        <table class="resume__table">
+            <tbody>
+                <tr>
+                    <td class="resume__label">성 장 과 정</td> 
+                    <td class="resume__text">
+                        <textarea></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="resume__label">성격 및 특기</td> 
+                    <td class="resume__text">
+                        <textarea></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="resume__label">지 원 동 기</td> 
+                    <td class="resume__text">
+                        <textarea></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="resume__label">입사 후 포부</td> 
+                    <td class="resume__text">
+                        <textarea></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /자기소개서 -->
 </div>
-<!-- /이력서 -->

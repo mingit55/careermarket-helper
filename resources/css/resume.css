@@ -5,11 +5,13 @@
     padding: 50px 0;
     max-width: 1140px;
     min-height: 100px;
+    overflow-x: auto;
 }
+.resume::-webkit-scrollbar { display: none; }
 
 .resume__container {
     min-width: 1140px;
-    padding: 0 1em;
+    padding: 15px 1em;
 }
 
 .resume__title {
@@ -18,6 +20,7 @@
     letter-spacing: 2em;
     text-align: center;
     margin-bottom: 0.5em;
+    padding-left: 2em;
 }
 
 .resume__table {
@@ -28,7 +31,7 @@
     border-collapse: collapse;
 }
 
-.resume__table td { padding: 0.5em 1em; border: 1px solid #333; }
+.resume__table td { padding: 0.5em 0.8em; border: 1px solid #333; }
 
 /* 테이블 이미지 */
 .resume__table td.resume__image {
@@ -99,12 +102,19 @@
     border: none;
     outline: none;
 }
-.resume__table .resume__duration { text-align: center; }
-.resume__table .resume__duration input { border: none; }
 
 .resume__table .resume__head {
     text-align: center;
     background-color: #dbedf1;
+}
+
+.resume__text textarea {
+    border: none;
+    outline: none;
+    width: 100%;
+    min-width: 120px;
+    min-height: 200px;
+    resize: none;
 }
 
 /* /테이블 입력 */
@@ -114,8 +124,8 @@
 .resume__table .resume__remove { text-align: center; width: 5em; }
 .resume__table .btn-remove {
     border: none;
-    width: 5em;
-    padding: 0.3em 0;
+    width: 2em;
+    height: 2em;
     font-size: 0.9em;
     border-radius: 0.25em;
     background-color: #f14242;
