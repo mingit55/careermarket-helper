@@ -45,7 +45,7 @@
         <div class="container padding">
             <div class="row">
                 <div class="col-lg-10">
-                    <div class="main__title">어떻게하면 온라인으로
+                    <div class="main__title">어떻게 하면 온라인으로
                         진로마켓에 참여할 수 있나요?</div>
                     <div class="main__process">
                         <div class="main__pitem">
