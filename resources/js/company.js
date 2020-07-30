@@ -76,7 +76,7 @@ class App {
 
     // 유저 정보 가져오기
     getUserData(){
-        if(user__identity){
+        if(user__identity != false){
             return fetch(`/students/${user__identity}/applications-json`)
                     .then(res => res.json())
                     .then(json => {
@@ -87,7 +87,7 @@ class App {
                     });
         } else {
             this.appliedList = [];
-            return;
+            return new Promise(res => res());
         }
     }
 

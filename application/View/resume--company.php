@@ -7,7 +7,9 @@
             <tbody>
                 <tr>
                     <td class="resume__image" rowspan="4">
-                        <img src="<?=$resume->personal_data->image?>" alt="">
+                        <?php if($resume->personal_data->image):?>
+                            <img src="<?=$resume->personal_data->image?>" alt="">
+                        <?php endif;?>
                     </td>
                     <td class="resume__label">이 름</td>
                     <td class="resume__input"><?=$resume->personal_data->name?></td>

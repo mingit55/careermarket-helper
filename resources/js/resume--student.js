@@ -130,9 +130,6 @@ Resome.prototype.loadData = function(){
             });
             autosize.rowSpan = tbody.children.length;
 
-
-            var textarea;
-
             // 성장 과정
             document.querySelector("[data-info='growth_text'].resume__text textarea").value = resume.growth_text;
             // 성격 및 특기
