@@ -36,15 +36,15 @@ class Company {
                                     </div>
                                     <div class="mt-5 text-right d-between">
                                         <div class="company__count">
-                                            <span>지원<br>인원</span>
+                                            <span>${site__lang == "kr" ? "지원<br>인원" : "Support<br>Personnel"}</span>
                                             <strong>${applicant_cnt.toLocaleString()}</strong>
                                         </div>
                                         ${ 
                                             user__type === 'students' ? 
                                                 (
                                                     this.app.appliedList.includes(id) ? 
-                                                    `<button class="company__btn" data-id="${id}" disabled>신청 중</button>`
-                                                    :`<button class="company__btn" data-id="${id}">면접신청</button>`
+                                                    `<button class="company__btn" data-id="${id}" disabled>${site__lang == "kr" ? "신청 중" : "Applying"}</button>`
+                                                    :`<button class="company__btn" data-id="${id}">${site__lang == "kr" ? "면접신청" : "Apply"}</button>`
                                                 )
                                             : ""
                                         }
@@ -115,7 +115,11 @@ class App {
             if(e.target.classList.contains("company__btn")){
                 let id = e.target.dataset.id;
                 let company = this.companies.find(company => company.id == id);
-                if(!confirm(company.name + "에 면접을 신청합니다. 진행하시겠습니까?")) return;
+                let confirm_msg = site__lang == "kr" ? 
+                    company.name + "에 면접을 신청합니다. 진행하시겠습니까?" 
+                    : "I'd like to apply for an interview with " + company.name +". Would you like to proceed?";
+                    
+                if(!confirm(confirm_msg)) return;
 
                 this.applyForm.querySelector("#company_id").value = company.id;
                 this.applyForm.submit();

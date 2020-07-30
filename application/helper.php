@@ -94,3 +94,9 @@ function base64_upload($base64){
 function extname($filename){
     return strtolower(substr($filename, strrpos($filename, ".")));
 }
+
+function lang($kr, $en){
+    $langs = ["kr", "en"];
+    $lang = isset($_SESSION['lang']) && array_search($_SESSION['lang'], $langs) !== false ? $_SESSION['lang'] : "kr";
+    return $lang == "kr" ? $kr : $en;
+}

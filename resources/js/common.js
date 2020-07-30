@@ -153,6 +153,7 @@ NodeList.prototype.addEventListener = function(event, callback){
 };
 
 window.addEventListener("load", function(){
+    window.site__lang = document.querySelector("#site__lang").value;
     window.user__identity = document.querySelector("#user__identity").value;
     window.user__type = document.querySelector("#user__type").value;
 
@@ -199,6 +200,23 @@ window.addEventListener("load", function(){
     closableLogin && closableLogin.addEventListener("click", (e) => {
         if(e.target.classList.contains("closable__login")){
             openLogin.checked = false;
+        }
+    }); 
+
+
+    // 언어 설정 모달
+    let openLang = document.querySelector("#open-lang");
+    let openableLang = document.querySelectorAll(".openable__lang");
+    let closableLang = document.querySelectorAll(".closable__lang");
+
+    openableLang && openableLang.addEventListener("click", (e) => {
+        if(e.target.classList.contains("openable__lang")){
+            openLang.checked = true;
+        }
+    });
+    closableLang && closableLang.addEventListener("click", (e) => {
+        if(e.target.classList.contains("closable__lang")){
+            openLang.checked = false;
         }
     }); 
 

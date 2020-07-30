@@ -5,6 +5,9 @@ Router::$pages__emptyLayout = ["\\/sign-up\\/.+"];
 
 Router::get("/", "CommonController@mainPage");
 
+// 언어 설정
+Router::post("/langs", "CommonController@setLanguage");
+
 // 회원 관리
 Router::post("/sign-in", "MemberController@signIn");
 Router::get("/logout", "MemberController@logout");

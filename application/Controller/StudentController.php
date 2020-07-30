@@ -7,7 +7,7 @@ class StudentController {
     // 면접 신청 내역 가져오기
     function getApplicationJSON($student_id){
         $student = DB::find("students", $student_id);
-        if(!$student) json_response("해당 학생을 찾을 수 없습니다.");
+        if(!$student) json_response(lang("해당 학생을 찾을 수 없습니다.", "The student could not be found."));
         $data = DB::fetchAll("SELECT company_id FROM applications WHERE student_id = ?", [$student_id]);
         json_response(compact("data"));
     }
@@ -17,11 +17,11 @@ class StudentController {
         $company_id = isset($_POST['company_id']) ? $_POST['company_id'] : null;
         $company = DB::find("companies", $company_id);
         
-        if(!$company) back("해당 기업을 찾을 수 없습니다.");
+        if(!$company) back(lang("해당 기업을 찾을 수 없습니다.", "No such business was found."));
 
         // 중복 검사
         $overlap = DB::fetch("SELECT * FROM applications WHERE student_id = ? AND company_id = ?", [user()->id, $company_id]);
-        if($overlap) back("이미 면접을 신청한 기업입니다.");
+        if($overlap) back(lang("이미 면접을 신청한 기업입니다.", "It's a company that has already applied for an interview."));
 
         // 신청 내역 작성
         DB::query("INSERT INTO applications(student_id, company_id) VALUES (?, ?)", [user()->id, $company_id]);
@@ -44,7 +44,7 @@ class StudentController {
                         '[]'
                     )", [user()->id, $company_id, $apply_id]);
         
-        go("/participant-companies", "면접이 신청되었습니다.");
+        go("/participant-companies", lang("면접이 신청되었습니다.", "The interview has been requested."));
     }    
 
 
@@ -62,8 +62,8 @@ class StudentController {
 
     function removeApplication($apply_id){
         $application = DB::find("applications", $apply_id);
-        if(!$application) json_response("신청 내역을 찾을 수 없습니다.");
-        if($application->student_id != user()->id) json_response("취소할 권한이 없습니다.");
+        if(!$application) json_response(lang("신청 내역을 찾을 수 없습니다.", "Application history not found."));
+        if($application->student_id != user()->id) json_response(lang("취소할 권한이 없습니다.", "You do not have permission to cancel."));
 
         DB::query("DELETE FROM applications WHERE id = ?", [$apply_id]);
         json_response([]);
@@ -76,11 +76,11 @@ class StudentController {
 
     function editResume($apply_id){
         $application = DB::find("applications", $apply_id);
-        if(!$application) json_response("신청 내역을 찾을 수 없습니다.");
-        if($application->student_id !== user()->id) json_response("수정할 권한이 없습니다.");
+        if(!$application) json_response(lang("신청 내역을 찾을 수 없습니다.", "Application history not found."));
+        if($application->student_id !== user()->id) json_response(lang("수정할 권한이 없습니다.", "You do not have permission to modify."));
 
         $resume = DB::fetch("SELECT * FROM resumes WHERE apply_id = ?", [$application->id]);
-        if(!$resume) json_response("이력서 작성 내역을 찾을 수 없습니다.");
+        if(!$resume) json_response(lang("이력서 작성 내역을 찾을 수 없습니다.", "No resume creation history found."));
         $input = json_decode(file_get_contents("php://input"));
 
         // 이미지를 업로드한 경우
@@ -118,16 +118,16 @@ class StudentController {
                         $input->plan_text,
                         $resume->id
                     ]);
-        json_response(["updated_at" => date("Y년 m월 d일 H시 i분 s초")]);
+        json_response(["updated_at" => date("Y-m-d H:i:s")]);
     }
 
     function getResumeJSON($apply_id){
         $application = DB::find("applications", $apply_id);
-        if(!$application) json_response("신청 내역을 찾을 수 없습니다.");
-        if($application->student_id !== user()->id) json_response("수정할 권한이 없습니다.");
+        if(!$application) json_response(lang("신청 내역을 찾을 수 없습니다.", "Application history not found."));
+        if($application->student_id !== user()->id) json_response(lang("수정할 권한이 없습니다.", "You do not have permission to modify."));
 
         $resume = DB::fetch("SELECT * FROM resumes WHERE apply_id = ?", [$application->id]);
-        if(!$resume) json_response("이력서 작성 내역을 찾을 수 없습니다.");
+        if(!$resume) json_response(lang("이력서 작성 내역을 찾을 수 없습니다.", "No resume creation history found."));
 
         json_response(["resume" => $resume]);
     }

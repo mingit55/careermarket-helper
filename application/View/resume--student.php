@@ -1,7 +1,7 @@
 <div class="resume">
     <!-- 이력서 -->
     <div class="resume__container">
-        <h1 class="resume__title">이 력 서</h1>
+        <h1 class="resume__title <?=lang("", "en")?>"><?=lang("이 력 서", "Resume")?></h1>
         <!-- 인적 사항 -->
         <table class="resume__table">
             <tbody>
@@ -9,8 +9,8 @@
                     <td class="resume__image" rowspan="4">
                         <input type="hidden" id="profile__url" name="imageURL">
                         <input type="file" id="profile" hidden>
-                        <small class="d-inline-block mb-2 text-gray">등록된 사진이 없습니다</small>
-                        <button>사진 등록</button>
+                        <small class="d-inline-block mb-2 text-gray"><?=lang("등록된 사진이 없습니다", "No uploaded photos")?></small>
+                        <button><?=lang("사진 등록", "Upload")?></button>
                         <label for="profile"></label>
                     </td>
                     <td class="resume__label">이 름</td>

@@ -9,6 +9,14 @@ class CommonController {
         view("main");
     }
 
+    // 언어 설정
+    function setLanguage(){
+        $langs = ["kr", "en"];
+        $lang = !isset($_POST['lang']) || array_search($_POST['lang'], $langs) === false ? "kr" : $_POST['lang'];
+        $_SESSION['lang'] = $lang;
+        go("/", lang("언어가 변경되었습니다.", "Language has changed."));
+    }
+
     // 참여 기업 페이지
     function companyPage(){
         view("company");

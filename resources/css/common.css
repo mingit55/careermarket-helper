@@ -452,6 +452,59 @@ header .nav-item .sub-list a:hover { background-color: #eee; }
 #open-login:checked ~ .modal__login .login__form > * { opacity: 1; transform: translateY(0); }
 /* /모달 - 로그인 */
 
+/* 모달 - 언어 설정 */
+
+.lang__form > * {
+    transform: translateX(50%);
+    opacity: 0;
+    transition: 0.4s;
+}
+.lang__form > *:nth-child(1) { transition-delay: calc(0.1s * 1 - 0.1s) }
+.lang__form > *:nth-child(2) { transition-delay: calc(0.1s * 2 - 0.1s) }
+.lang__form > *:nth-child(3) { transition-delay: calc(0.1s * 3 - 0.1s) }
+.lang__form > *:nth-child(4) { transition-delay: calc(0.1s * 4 - 0.1s) }
+
+.lang__title {
+    font-size: 1.3em;
+    color: #fff;
+}
+
+.lang__select {
+    width: 300px;
+    height: 40px;
+    background-color: #fff5;
+    border-radius: 20px;
+    margin: 1em 0;
+    overflow: hidden;
+}
+
+.lang__select > select {
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 20px;
+    background-position-x: 80%;
+}
+.lang__select option { color: #333; }
+.lang__select > select::placeholder { color: #ccc; }
+.lang__button {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 0.5em;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--sub);
+    color: #fff;
+    border: none;
+}
+
+
+#open-lang:checked ~ .modal__lang { opacity: 1; pointer-events: all; }
+#open-lang:checked ~ .modal__lang .lang__form > * { opacity: 1; transform: translateY(0); }
+/* /모달 - 언어 설정 */
 
 /* 푸터 영역 */
 footer { 

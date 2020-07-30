@@ -18,7 +18,7 @@ class CompanyController {
     // 이력서 & 자기소개서 열람
     function resumePage($apply_id){
         $application = DB::find("applications", $apply_id);
-        if(!$application) back("신청 내역을 찾을 수 없습니다.");
+        if(!$application) back(lang("신청 내역을 찾을 수 없습니다.", "Application history not found."));
 
         $resume = DB::fetch("SELECT * FROM resumes WHERE apply_id = ?", [$application->id]);
         $resume->personal_data = json_decode($resume->personal_data);
