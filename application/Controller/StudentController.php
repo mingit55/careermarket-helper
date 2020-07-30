@@ -28,7 +28,21 @@ class StudentController {
         $apply_id = DB::lastInsertId();
 
         // 이력서 & 자기소개서 작성
-        DB::query("INSERT INTO resumes(student_id, company_id, apply_id) VALUES (?, ?, ?)", [user()->id, $company_id, $apply_id]);
+        DB::query("INSERT INTO resumes(student_id, company_id, apply_id,
+                        personal_data,
+                        school_data,
+                        act_data,
+                        license_data,
+                        award_data
+                    ) 
+                    VALUES (
+                        ?, ?, ?,
+                        '{}',
+                        '[]',
+                        '[]',
+                        '[]',
+                        '[]'
+                    )", [user()->id, $company_id, $apply_id]);
         
         go("/participant-companies", "면접이 신청되었습니다.");
     }    
@@ -57,6 +71,64 @@ class StudentController {
 
     // 이력서 & 자기소개서 관리 페이지
     function resumePage(){
-        view("resume");
+        view("resume--student");
+    }
+
+    function editResume($apply_id){
+        $application = DB::find("applications", $apply_id);
+        if(!$application) json_response("신청 내역을 찾을 수 없습니다.");
+        if($application->student_id !== user()->id) json_response("수정할 권한이 없습니다.");
+
+        $resume = DB::fetch("SELECT * FROM resumes WHERE apply_id = ?", [$application->id]);
+        if(!$resume) json_response("이력서 작성 내역을 찾을 수 없습니다.");
+        $input = json_decode(file_get_contents("php://input"));
+
+        // 이미지를 업로드한 경우
+        if($input->personal_data->image && strpos($input->personal_data->image, "base64") !== false){
+            // 원본 이미지가 있으면 원본 삭제
+            $origin_data = json_decode($resume->personal_data);
+            if($origin_data->image && is_file(UPLOAD.DS.$origin_data->image)){
+                unlink(UPLOAD.DS.$origin_data->image);
+            }
+
+            // 현재 입력한 파일 업로드
+            $input->personal_data->image = base64_upload($input->personal_data->image);
+        }
+
+        DB::query("UPDATE resumes 
+                    SET personal_data = ?, 
+                        school_data = ?, 
+                        act_data = ?, 
+                        license_data = ?, 
+                        award_data = ?, 
+                        growth_text = ?, 
+                        character_text = ?, 
+                        reason_text = ?, 
+                        plan_text = ?
+                    WHERE id = ?",
+                    [
+                        json_encode($input->personal_data),
+                        json_encode($input->school_data),
+                        json_encode($input->act_data),
+                        json_encode($input->license_data),
+                        json_encode($input->award_data),
+                        $input->growth_text,
+                        $input->character_text,
+                        $input->reason_text,
+                        $input->plan_text,
+                        $resume->id
+                    ]);
+        json_response(["updated_at" => date("Y년 m월 d일 H시 i분 s초")]);
+    }
+
+    function getResumeJSON($apply_id){
+        $application = DB::find("applications", $apply_id);
+        if(!$application) json_response("신청 내역을 찾을 수 없습니다.");
+        if($application->student_id !== user()->id) json_response("수정할 권한이 없습니다.");
+
+        $resume = DB::fetch("SELECT * FROM resumes WHERE apply_id = ?", [$application->id]);
+        if(!$resume) json_response("이력서 작성 내역을 찾을 수 없습니다.");
+
+        json_response(["resume" => $resume]);
     }
 }

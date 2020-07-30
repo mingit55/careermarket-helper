@@ -76,14 +76,19 @@ class App {
 
     // 유저 정보 가져오기
     getUserData(){
-        return fetch(`/students/${user__identity}/applications`)
-            .then(res => res.json())
-            .then(json => {
-                this.appliedList = json.data.map(item => item.company_id);
-            })
-            .catch(err => {
-                this.appliedList = [];
-            });
+        if(user__identity){
+            return fetch(`/students/${user__identity}/applications-json`)
+                    .then(res => res.json())
+                    .then(json => {
+                        this.appliedList = json.data.map(item => item.company_id);
+                    })
+                    .catch(err => {
+                        this.appliedList = [];
+                    });
+        } else {
+            this.appliedList = [];
+            return;
+        }
     }
 
     // 이벤트 작성

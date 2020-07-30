@@ -144,3 +144,30 @@
     border-radius: 0.25em;
 }
 /* /테이블 추가 */
+
+
+/* 업데이트 영역 */
+#update__area {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2em;
+    padding: 0.5em 1em;
+    background-color: var(--main);
+    border-radius: 5em;
+    color: #fff;
+    user-select: none;
+    transition: bottom 0.4s, opacity 0.4s;
+}
+
+#update__area.hidden {
+    bottom: 0;
+    opacity: 0;
+}
+
+#update__area.success .process,
+#update__area:not(.success) .success 
+{ display: none; }
+
+
+/* /업데이트 영역 */

@@ -24,7 +24,7 @@
         </div>
         <div class="cell-25"><?=$student->school_field?></div>
         <div class="cell-25 text-right">
-            <button class="btn-filled mb-1" data-link="/applications/<?=$student->id?>/resumes">이력서 보기</button>
+            <button class="btn-filled mb-1" data-link="/applications/<?=$student->id?>/resume">이력서 보기</button>
         </div>
     </div>
     <?php endforeach;?>

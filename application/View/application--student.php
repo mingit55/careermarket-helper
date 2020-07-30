@@ -29,7 +29,7 @@
             <span class="text-gray">명</span>
         </div>
         <div class="cell-25 text-right">
-            <button class="btn-filled mb-1" data-link="/applications/<?=$app->id?>/resumes">이력서 관리</button>
+            <button class="btn-filled mb-1" data-link="/applications/<?=$app->id?>/resume">이력서 관리</button>
             <button class="btn-filled red" data-role="remove" data-id="<?= $app->id ?>">면접 취소</button>
         </div>
     </div>

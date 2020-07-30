@@ -18,21 +18,30 @@ Router::post("/sign-up/company", "MemberController@signUpCompany");
 Router::get("/participant-companies", "CommonController@companyPage");
 Router::get("/companies", "CommonController@getCompaniesJSON");
 
-// 신청 현황
-if(user() && user()->type == "students"){
-    Router::get("/applications", "StudentController@applicationPage");
-} else {
-    Router::get("/applications", "CompanyController@applicationPage");
-}
-
 // 신청 현황 API
-Router::get("/students/{student_id}/applications", "StudentController@getApplicationJSON");
+Router::get("/students/{student_id}/applications-json", "StudentController@getApplicationJSON");
 Router::post("/applications", "StudentController@applyInterview");
 Router::delete("/applications/{apply_id}", "StudentController@removeApplication");
 
 
-// 이력서 & 자기소개서 관리
-Router::get("/applications/{apply_id}/resumes", "StudentController@resumePage");
+
+if(user() && user()->type == "students"){
+    // 신청 현황
+    Router::get("/applications", "StudentController@applicationPage");
+
+    // 이력서 & 자기소개서 관리
+    Router::get("/applications/{apply_id}/resume", "StudentController@resumePage");
+    Router::get("/applications/{apply_id}/resume-json", "StudentController@getResumeJSON");
+    Router::put("/applications/{apply_id}/resume", "StudentController@editResume");
+} else {
+    // 신청 현황
+    Router::get("/applications", "CompanyController@applicationPage");
+
+    // 이력서 & 자기소개서 열람
+    Router::get("/applications/{apply_id}/resume", "CompanyController@resumePage");
+}
+
+
 
 
 Router::connect();
