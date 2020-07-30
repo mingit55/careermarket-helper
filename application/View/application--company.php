@@ -31,7 +31,7 @@
     <?php if(count($students) == 0):?>
     <div class="t__row">
         <div class="cell-100">
-            아직 면접을 신청한 기업이 없습니다.
+            아직 면접을 신청한 학생이 없습니다.
         </div>
     </div>
     <?php endif;?>
