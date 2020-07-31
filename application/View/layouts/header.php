@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/e9c7502802.js" crossorigin="anonymous"></script>
     <!-- /Fontawesome -->
     <!-- Styles -->
+    <link rel="icon" href="/resources/images/favicon.png">
     <link rel="stylesheet" href="/resources/css/common.css">
     <?php if(is_file(RES.DS."css".DS.$viewName.".css")):?>
         <link rel="stylesheet" href="/resources/css/<?=$viewName?>.css">
