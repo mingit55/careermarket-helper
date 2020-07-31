@@ -1,7 +1,7 @@
 <div class="resume">
     <!-- 이력서 -->
     <div class="resume__container">
-        <h1 class="resume__title">이 력 서</h1>
+    <h1 class="resume__title <?=lang("", "en")?>"><?=lang("이 력 서", "Resume")?></h1>
         <!-- 인적 사항 -->
         <table class="resume__table">
             <tbody>
@@ -11,19 +11,19 @@
                             <img src="<?=$resume->personal_data->image?>" alt="">
                         <?php endif;?>
                     </td>
-                    <td class="resume__label">이 름</td>
+                    <td class="resume__label"><?=lang("이 름", "Name")?></td>
                     <td class="resume__input"><?=$resume->personal_data->name?></td>
                 </tr>
                 <tr>
-                    <td class="resume__label">생 년 월 일</td>
+                    <td class="resume__label"><?=lang("생 년 월 일", "Birthday")?></td>
                     <td class="resume__input"><?=$resume->personal_data->birthday?></td>
                 </tr>
                 <tr>
-                    <td class="resume__label">연 락 처</td>
+                    <td class="resume__label"><?=lang("연 락 처", "Phone")?></td>
                     <td class="resume__input"><?=$resume->personal_data->phone?></td>
                 </tr>
                 <tr>
-                    <td class="resume__label">이 메 일</td>
+                    <td class="resume__label"><?=lang("이 메 일", "E-mail")?></td>
                     <td class="resume__input"><?=$resume->personal_data->email?></td>                </tr>
             </tbody>
         </table>
@@ -32,11 +32,11 @@
         <table class="resume__table" data-info="school_data">
             <tbody>
                 <tr>
-                    <td rowspan="<?=(count($resume->school_data) < 1 ? 1 : count($resume->school_data)) + 1?>" class="resume__label resume__autosize">학 력</td>
-                    <td class="resume__head">기 간</td>
-                    <td class="resume__head">학 교 명</td>
-                    <td class="resume__head">전 공</td>
-                    <td class="resume__head">비 고</td>
+                    <td rowspan="<?=(count($resume->school_data) < 1 ? 1 : count($resume->school_data)) + 1?>" class="resume__label resume__autosize"><?= lang("학 력", "Education") ?></td>
+                    <td class="resume__head"><?= lang("기 간", "Period") ?></td>
+                    <td class="resume__head"><?= lang("학 교 명", "School Name") ?></td>
+                    <td class="resume__head"><?= lang("전 공", "Major") ?></td>
+                    <td class="resume__head"><?= lang("비 고", "Other") ?></td>
                 </tr>
                 <?php foreach($resume->school_data as $item):?>
                 <tr>
@@ -61,9 +61,9 @@
         <table class="resume__table" data-info="act_data">
             <tbody>
                 <tr>
-                    <td rowspan="<?=(count($resume->act_data) < 1 ? 1 : count($resume->act_data)) + 1?>" class="resume__label resume__autosize">교 내 활 동</td>
-                    <td class="resume__head">날 짜</td>
-                    <td class="resume__head">상 세 내 용</td>
+                    <td rowspan="<?=(count($resume->act_data) < 1 ? 1 : count($resume->act_data)) + 1?>" class="resume__label resume__autosize"><?=lang("교 내 활 동", "Activity")?></td>
+                    <td class="resume__head"><?= lang("날 짜", "Date") ?></td>
+                    <td class="resume__head"><?= lang("상 세 내 용", "Description") ?></td>
                 </tr>
                 <?php foreach($resume->act_data as $item):?>
                 <tr>
@@ -84,10 +84,10 @@
         <table class="resume__table" data-info="license_data">
             <tbody>
                 <tr>
-                    <td rowspan="<?=(count($resume->license_data) < 1 ? 1 : count($resume->license_data)) + 1?>" class="resume__label resume__autosize">자 격 사 항</td>
-                    <td class="resume__head">취 득 일</td>
-                    <td class="resume__head">자 격 명</td>
-                    <td class="resume__head">발 급 기 관</td>
+                    <td rowspan="<?=(count($resume->license_data) < 1 ? 1 : count($resume->license_data)) + 1?>" class="resume__label resume__autosize"><?=lang("자 격 사 항", "Licenses")?></td>
+                    <td class="resume__head"><?=lang("취 득 일", "Date")?></td>
+                    <td class="resume__head"><?=lang("자 격 명", "Lic-Name")?></td>
+                    <td class="resume__head"><?=lang("발 급 기 관", "Organization")?></td>
                 </tr>
                 <?php foreach($resume->license_data as $item):?>
                 <tr>
@@ -110,10 +110,10 @@
         <table class="resume__table" data-info="award_data">
             <tbody>
                 <tr>
-                    <td rowspan="<?=(count($resume->award_data) < 1 ? 1 : count($resume->award_data)) + 1?>" class="resume__label resume__autosize">수 상 내 역</td>
-                    <td class="resume__head">수 상 일</td>
-                    <td class="resume__head">수 상 명</td>
-                    <td class="resume__head">발 급 기 관</td>
+                    <td rowspan="<?=(count($resume->award_data) < 1 ? 1 : count($resume->award_data)) + 1?>" class="resume__label resume__autosize"><?=lang("수 상 내 역", "Awards")?></td>
+                    <td class="resume__head"><?=lang("수 상 일", "Date")?></td>
+                    <td class="resume__head"><?=lang("수 상 명", "Awa-name")?></td>
+                    <td class="resume__head"><?=lang("발 급 기 관", "Organization")?></td>
                 </tr>
                 <?php foreach($resume->award_data as $item):?>
                 <tr>
@@ -136,29 +136,29 @@
     <!-- /이력서 -->
     <!-- 자기소개서 -->
     <div class="resume__container mt-5">
-        <div class="resume__title">자기소개서</div>
+        <div class="resume__title"><?=lang("자기소개서", "Self-Introduction")?></div>
         <table class="resume__table">
             <tbody>
                 <tr>
-                    <td class="resume__label">성 장 과 정</td> 
+                    <td class="resume__label"><?=lang("성 장 과 정", "Growth Process")?></td> 
                     <td class="resume__text" data-info="growth_text">
                         <?= nl2br(htmlentities($resume->growth_text)) ?>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__label">성격 및 특기</td> 
+                    <td class="resume__label"><?=lang("성격 및 특기", "Character")?></td> 
                     <td class="resume__text" data-info="character_text">
                         <?= nl2br(htmlentities($resume->character_text)) ?>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__label">지 원 동 기</td> 
+                    <td class="resume__label"><?=lang("지 원 동 기", "Application Reason")?></td> 
                     <td class="resume__text" data-info="reason_text">
                         <?= nl2br(htmlentities($resume->reason_text)) ?>
                     </td>
                 </tr>
                 <tr>
-                    <td class="resume__label">입사 후 포부</td> 
+                    <td class="resume__label"><?=lang("입사 후 포부", "Plan after join")?></td> 
                     <td class="resume__text" data-info="plan_text">
                         <?= nl2br(htmlentities($resume->plan_text)) ?>
                     </td>
@@ -168,16 +168,3 @@
     </div>
     <!-- /자기소개서 -->
 </div>
-
-<!-- 업데이트 영역 -->
-<div id="update__area" class="hidden">
-    <div class="process">
-        <i class="fas fa-circle-notch fa-spin"></i>
-        <span>업데이트 중입니다···.</span>
-    </div>
-    <div class="success">
-        <i class="fas fa-check"></i>
-        <span>업데이트 완료!</span>
-    </div>
-</div>
-<!-- /업데이트 영역 -->

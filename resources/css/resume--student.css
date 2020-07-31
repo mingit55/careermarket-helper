@@ -22,7 +22,7 @@
     margin-bottom: 0.5em;
     padding-left: 2em;
 }
-.resume__title.en { letter-spacing: 0.5em; }
+#lang_en:checked ~ #wrap .resume__title { letter-spacing: 0.1em; }
 
 .resume__table {
     margin-top: 1em;
@@ -92,6 +92,12 @@
     content: '';
     display: inline-block;
     width: 100%;
+}
+
+#lang_en:checked ~ #wrap td.resume__label {
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
 }
 /* /테이블 라벨 */
 

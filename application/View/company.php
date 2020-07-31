@@ -10,7 +10,7 @@
             <div class="search__form">
                 <div class="search__group">
                     <label for="company_name" class="search__label"><?=lang("기업명 검색", "Name")?></label>
-                    <input type="text" id="search__name" class="search__control" placeholder="<?=lang("찾고 싶은 기업의 이름을 입력하세요", "Enter the name of the company you want to find.")?>">
+                    <input type="text" id="search__name" class="search__control" placeholder="<?=lang("찾고 싶은 기업의 이름을 입력하세요", "Enter a company name you want to find.")?>">
                 </div>
                 <div class="search__group">
                     <label for="company__field" class="search__label"><?=lang("업종 검색", "Industry")?></label>

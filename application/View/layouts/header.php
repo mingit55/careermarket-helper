@@ -23,6 +23,8 @@
 <body>
     <!-- Hidden Inputs -->
     <input type="hidden" id="site__lang" value="<?=lang("kr", "en")?>">
+    <input type="checkbox" id="lang_en" hidden <?=lang("", "checked")?>>
+    <input type="checkbox" id="lang_ko" hidden <?=lang("checked", "")?>>
     <input type="hidden" id="user__identity" value="<?=user() ? user()->id : ""?>">
     <input type="hidden" id="user__type" value="<?=user() ? user()->type : "guest"?>">
     <input type="checkbox" class="open-modal" id="open-nav" hidden>

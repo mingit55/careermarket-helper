@@ -225,8 +225,8 @@ window.addEventListener("load", function(){
     let category = document.querySelector(".company-category");
 
     if(field && category) {
-        field.innerHTML = "<option value=''>업종 분류</option>";
-        category.innerHTML = "<option value=''>업종 상세</option>";
+        field.innerHTML = `<option value=''>${site__lang == 'kr' ? "업종 분류" : "Business Group"}</option>`;
+        category.innerHTML = `<option value=''>${site__lang == 'kr' ? "업종 상세" : "Group Details"}</option>`;
         fields.forEach(({name}) => {
             let option = document.createElement("option");
             option.innerText = name;

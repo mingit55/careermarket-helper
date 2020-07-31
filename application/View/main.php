@@ -4,7 +4,7 @@
         <div class="visual__texts">
             <span>2020 Career Market</span>
             <p class="fx-lg-1"><?=lang("우수한 기업과 인재와 함께하는\n", "with a good company and talent\n")?>
-            <?=lang("수원정보과학고", "Suwon Information Science High School")?> <strong><?=lang("진로마켓", "Career Market")?></strong></p>
+            <?=lang("수원정보과학고", "Suwon Information Science High School\n")?> <strong><?=lang("진로마켓", "Career Market")?></strong></p>
         </div>
     </div>
     <!-- /비주얼 영역 -->

@@ -14,7 +14,12 @@ class CommonController {
         $langs = ["kr", "en"];
         $lang = !isset($_POST['lang']) || array_search($_POST['lang'], $langs) === false ? "kr" : $_POST['lang'];
         $_SESSION['lang'] = $lang;
-        go("/", lang("언어가 변경되었습니다.", "Language has changed."));
+
+        $origin = $_SERVER['HTTP_ORIGIN'];
+        $prev = $_SERVER['HTTP_REFERER'];
+        $direction = strncmp($origin, $prev, strlen($origin)) == 0 ? $prev : $origin;
+
+        go($direction, lang("언어가 변경되었습니다.", "Language has changed."));
     }
 
     // 참여 기업 페이지
